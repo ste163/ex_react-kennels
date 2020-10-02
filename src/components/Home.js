@@ -1,6 +1,5 @@
 // the react from looks different because it's looking in the package.json file
 import React from "react"
-import "./Home.css"
 
 // In a function, you can only return one thing. That's what the <> </> are.
 // They are "fragments" which say the implicit return should 
