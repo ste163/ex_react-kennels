@@ -1,6 +1,7 @@
 // the react from looks different because it's looking in the package.json file
 import React from "react"
 import { AnimalCard } from "./animal/AnimalCard"
+import { CustomerCard } from "./customer/CustomerCard"
 import "./Kennel.css"
 
 // In a function, you can only return one thing. That's what the <> </> are. They are "fragments" which say the implicit return should 
@@ -20,6 +21,13 @@ export const Kennel = () => (
             <AnimalCard />
             <AnimalCard />
             <AnimalCard />
+        </article>
+        
+        <h2>Customers</h2>
+        <article className="customers">
+            <CustomerCard />
+            <CustomerCard />
+            <CustomerCard />
         </article>
     </>
 )
