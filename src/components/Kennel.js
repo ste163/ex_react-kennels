@@ -2,6 +2,8 @@
 import React from "react"
 import { AnimalCard } from "./animal/AnimalCard"
 import { CustomerCard } from "./customer/CustomerCard"
+import { EmployeeCard } from "./employee/EmployeeCard"
+import { LocationCard } from "./location/LocationCard"
 import "./Kennel.css"
 
 // In a function, you can only return one thing. That's what the <> </> are. They are "fragments" which say the implicit return should 
@@ -28,6 +30,20 @@ export const Kennel = () => (
             <CustomerCard />
             <CustomerCard />
             <CustomerCard />
+            <CustomerCard />
+        </article>
+
+        <h2>Locations</h2>
+        <article className="locations">
+            <LocationCard />
+            <LocationCard />
+        </article>
+
+        <h2>Employees</h2>
+        <article className="employees">
+            <EmployeeCard />
+            <EmployeeCard />
+            <EmployeeCard />
         </article>
     </>
 )
