@@ -5,9 +5,10 @@ import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
-import { EmployeeCard } from "./employee/EmployeeCard"
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
+import { EmployeeProvider } from "./employee/EmployeeProvider"
+import { EmployeeList } from "./employee/EmployeeList"
 
 export const ApplicationViews = () => {
     return (
@@ -17,10 +18,11 @@ export const ApplicationViews = () => {
                 We have to put "exact" for first item because it only shows
                 what's on that path and not that and everything after.
             */}
-            <Route exact path="/">
+            <Route path="/">
                 <Home />
             </Route>    
-             
+
+             <h2>Locations</h2>
             <LocationProvider>
                 <Route exact path="/locations">
                     <LocationList />
@@ -28,21 +30,26 @@ export const ApplicationViews = () => {
             </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
+            <h2>Animals</h2>
             <AnimalProvider>
                 <Route exact path="/animals">
                     <AnimalList />
                 </Route>
             </AnimalProvider> 
 
+            <h2>Customer</h2>
             <CustomerProvider>
-                <Route path="/customers">
+                <Route exact path="/customers">
                     <CustomerList />
                 </Route>
             </CustomerProvider>
 
-            <Route path="/employees">
-                <EmployeeCard />
-            </Route>
+            <h2>Employees</h2>
+            <EmployeeProvider>
+                <Route exact path="/employees">
+                    <EmployeeList />
+                </Route>
+            </EmployeeProvider>
         </>
     )
 }

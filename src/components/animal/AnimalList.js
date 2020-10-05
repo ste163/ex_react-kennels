@@ -11,9 +11,9 @@ export const AnimalList = () => {
     // useEffect doesn't run the first time. It only runs on a state-change event.
     // That's how the useEffect function works.
     useEffect(() => {
-		console.log("AnimalList: useEffect - getAnimals")
-		getAnimals()
-		// The empty array means by default there is nothing, so only run when there is a change.
+      console.log("AnimalList: useEffect - getAnimals")
+      getAnimals()
+      // The empty array means by default there is nothing, so only run when there is a change.
     }, [])
 
 

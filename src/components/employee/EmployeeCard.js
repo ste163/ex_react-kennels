@@ -1,9 +1,8 @@
 import React from "react"
-import "./Employee.css"
 
-export const EmployeeCard = () => (
+export const EmployeeCard = ({employee, location}) => (
     <section className="employee">
-        <h3 className="employee__name">Employee Name</h3>
-        <div className="employee__info">Employee Information</div>
+        <h3 className="employee__name">{employee.name}</h3>
+        <div className="employee__info">{location.name}</div>
     </section>
 )
