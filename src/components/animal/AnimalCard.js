@@ -1,5 +1,4 @@
 import React from "react"
-import "./Animal.css"
 
 // Or instead of props, you could do ({ animal }) -- parameter destructuring
 // Because you're saying we're receiving an animal object

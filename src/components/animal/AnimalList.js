@@ -18,13 +18,13 @@ export const AnimalList = () => {
 
 
     return (	
-		<div className="animals">
+		  <div className="animals">
 		    {console.log("AnimalList: Render")}
         {
-			animals.map(animal => {
-				return <AnimalCard key={animal.id} animal={animal} />
-			})
+          animals.map(animal => {
+            return <AnimalCard key={animal.id} animal={animal} />
+			    })
         }
-        </div>
+      </div>
     )
 }

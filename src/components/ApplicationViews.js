@@ -4,7 +4,8 @@ import { Home } from "./Home"
 import { LocationCard } from "./location/LocationCard"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
-import { CustomerCard } from "./customer/CustomerCard"
+import { CustomerProvider } from "./customer/CustomerProvider"
+import { CustomerList } from "./customer/CustomerList"
 import { EmployeeCard } from "./employee/EmployeeCard"
 
 export const ApplicationViews = () => {
@@ -30,9 +31,11 @@ export const ApplicationViews = () => {
                 </Route>
             </AnimalProvider> 
 
-            <Route path="/customers">
-                <CustomerCard />
-            </Route>
+            <CustomerProvider>
+                <Route path="/customers">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
 
             <Route path="/employees">
                 <EmployeeCard />
