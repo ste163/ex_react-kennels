@@ -13,6 +13,13 @@
             "breed": "Cat",
             "customerId": 2,
             "locationId": 1
+        },
+        {
+            "id": 3,
+            "name": "Goldie",
+            "breed": "Golden Doodle",
+            "customerId": 3,
+            "locationId": 2
         }
     ],
     "customers": [
@@ -25,9 +32,35 @@
             "id": 2,
             "name": "Homer Simpson",
             "address": "7005 Chestnut Ct"
+        },
+        {
+            "id": 3,
+            "name": "Jane Doe",
+            "address": "125 Main Street"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jeremy Bakker",
+            "locationId": 1
+        },
+        {
+            "id": 2,
+            "name": "Jerome Burker",
+            "locationId": 1
+        },
+        {
+            "id": 3,
+            "name": "Jane Balker",
+            "locationId": 2
+        },
+        {
+            "id": 4,
+            "name": "Jenny Beecher",
+            "locationId": 2
+        }
+    ],
     "locations": [
         {
             "id": 1,
