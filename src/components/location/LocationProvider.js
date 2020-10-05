@@ -7,40 +7,37 @@ import React, { useState, createContext } from "react"
 // Contexts store certain kinds of data used by the application.
 // When you create a data provider, you must create a context
 // Nothing is stored in the context at this point, it's just waiting
-export const CustomerContext = createContext();
-    
+export const LocationContext = createContext();
+
 // Provider allows other components to use data in the context
-export const CustomerProvider = (props) => {
+export const LocationProvider = (props) => {
+    const [locations, setLocation] = useState([])
 
-    // Define a variable to hold the component's state and a function to update it
-    const [customers, setCustomers] = useState([])
-
-    // Like the vanilla provider...
-    const getCustomers = () => {
-        return fetch("http://localhost:8088/customers")
-            .then(response => response.json())
-            .then(setCustomers)
+    const getLocations = () => {
+        return fetch("http://localhost:8088/locations")
+        .then(res => res.json())
+        .then(setLocation)
     }
 
-    const addCustomers = customer => {
-        return fetch("http://localhost:8088/customers", {
+    const addLocations = location => {
+        return fetch("http://localhost:8088/locations", {
             method: "POST",
             headers: {
                 "Content-Type": "application.json"
             },
-            body: JSON.stringify(customer)
+            body: JSON.stringify(location)
         })
-        .then(getCustomers)
+        .then(getLocations)
     }
 
     // Defines what this component will expose to other components
     // All we really are concerned with are the
     // variables in the value attribute
     return (
-        <CustomerContext.Provider value={{
-            customers, addCustomers, getCustomers
+        <LocationContext.Provider value={{
+            locations, addLocations, getLocations
         }}>
             {props.children}
-        </CustomerContext.Provider>
+        </LocationContext.Provider>
     )
 }

@@ -18,6 +18,7 @@ export const CustomerList = () => {
             {console.log("CustomerList: Render")}
             {
                 customers.map(customer => {
+                    // Although this looks like an HTML component, it's JSX for our CustomerCard function
                     return <CustomerCard key={customer.id} customer={customer}/>
                 })
             }
