@@ -12,12 +12,15 @@ export const EmployeeList = () => {
     }, [])
 
     return (
-        <div className="employees">
-            {
-                employees.map(employee => {
-                    return <EmployeeCard key={employee.id} employee={employee} location={employee.location} />
-                })
-            }
-        </div>
+        <>
+            <h2>Employees</h2>
+            <div className="employees">
+                {
+                    employees.map(employee => {
+                        return <EmployeeCard key={employee.id} employee={employee} location={employee.location} />
+                    })
+                }
+            </div>
+        </>
     )
 }

@@ -11,13 +11,16 @@ export const LocationList = () => {
     }, [])
 
     return (
-        <div className="locations">
-            {console.log("LocationList: Render")}
-            {
-                locations.map(location => {
-                    return <LocationCard key={location.id} location={location} />
-                })
-            }
-        </div>
+        <>
+            <h2>Locations</h2>
+            <div className="locations">
+                {console.log("LocationList: Render")}
+                {
+                    locations.map(location => {
+                        return <LocationCard key={location.id} location={location} />
+                    })
+                }
+            </div>
+        </>
     )
 }

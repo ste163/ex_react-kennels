@@ -18,9 +18,9 @@ export const AnimalList = () => {
       // The empty array means by default there is nothing, so only run when there is a change.
     }, [])
 
-
     return (	
       <>
+        <h2>Animals</h2>
         <button onClick={() => {history.push("/animals/create")}}>
             Add Animal
         </button>

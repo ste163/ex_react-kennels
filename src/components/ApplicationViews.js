@@ -19,11 +19,10 @@ export const ApplicationViews = () => {
                 We have to put "exact" for first item because it only shows
                 what's on that path and not that and everything after.
             */}
-            <Route path="/">
+            <Route exact path="/">
                 <Home />
             </Route>    
 
-             <h2>Locations</h2>
             <LocationProvider>
                 <Route exact path="/locations">
                     <LocationList />
@@ -31,7 +30,6 @@ export const ApplicationViews = () => {
             </LocationProvider>
 
             {/* Render the animal list when http://localhost:3000/animals */}
-            <h2>Animals</h2>
             <AnimalProvider>
                 <Route exact path="/animals">
                     <AnimalList />
@@ -48,14 +46,12 @@ export const ApplicationViews = () => {
                 </LocationProvider>
             </AnimalProvider>
 
-            <h2>Customer</h2>
             <CustomerProvider>
                 <Route exact path="/customers">
                     <CustomerList />
                 </Route>
             </CustomerProvider>
 
-            <h2>Employees</h2>
             <EmployeeProvider>
                 <Route exact path="/employees">
                     <EmployeeList />

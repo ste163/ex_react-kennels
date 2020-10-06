@@ -14,14 +14,17 @@ export const CustomerList = () => {
 
 
     return (
-        <div className="customers">
-            {console.log("CustomerList: Render")}
-            {
-                customers.map(customer => {
-                    // Although this looks like an HTML component, it's JSX for our CustomerCard function
-                    return <CustomerCard key={customer.id} customer={customer}/>
-                })
-            }
-        </div>
+        <>
+            <h2>Customers</h2>
+            <div className="customers">
+                {console.log("CustomerList: Render")}
+                {
+                    customers.map(customer => {
+                        // Although this looks like an HTML component, it's JSX for our CustomerCard function
+                        return <CustomerCard key={customer.id} customer={customer}/>
+                    })
+                }
+            </div>
+        </>
     )
 }
