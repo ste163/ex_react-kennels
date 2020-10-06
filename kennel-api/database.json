@@ -22,9 +22,10 @@
       "locationId": 2
     },
     {
-      "name": "Jessie",
-      "locationId": 3,
-      "customerId": 1,
+      "name": "Sally",
+      "breed": "Golden Doodle",
+      "locationId": 2,
+      "customerId": 3,
       "id": 4
     }
   ],
