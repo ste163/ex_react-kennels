@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
-import "./Animal.css"
 import { useParams, useHistory } from "react-router-dom"
+import "./Animal.css"
 
 export const AnimalDetail = () => {
     const { getAnimalById } = useContext(AnimalContext)
