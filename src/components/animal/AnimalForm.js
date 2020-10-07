@@ -63,8 +63,13 @@ export const AnimalForm = (props) => {
         }
     }
 
+    const submitAnimalForm = (e) => {
+        e.preventDefault() // Prevent browser from submitting the form
+        constructNewAnimal()
+    }
+
     return (
-        <form className="animalForm">
+        <form className="animalForm" onSubmit={submitAnimalForm}>
             <h2 className="animalForm__title">New Animal</h2>
             <fieldset>
                 <div className="form-group">
@@ -104,14 +109,7 @@ export const AnimalForm = (props) => {
                     </select>
                 </div>
             </fieldset>
-            <button type="submit"
-                onClick={evt => {
-                    evt.preventDefault() // Prevent browser from submitting the form
-                    constructNewAnimal()
-                }}
-                className="btn btn-primary">
-                Save Animal
-            </button>
+            <button type="submit" className="btn btn-primary">Save Animal</button>
         </form>
     )
 }
