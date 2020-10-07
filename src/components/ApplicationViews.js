@@ -9,7 +9,7 @@ import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
 import { LocationProvider } from "./location/LocationProvider"
 import { LocationList } from "./location/LocationList"
-import { EmployeeContext, EmployeeProvider } from "./employee/EmployeeProvider"
+import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
 

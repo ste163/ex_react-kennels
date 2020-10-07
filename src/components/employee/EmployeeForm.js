@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import "./Employee.css"
 
 export const EmployeeForm = props => {
-    const { addEmployees } = useContext(EmployeeContext)
+    const { addEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
     const history = useHistory()
 
@@ -17,7 +17,17 @@ export const EmployeeForm = props => {
     }, [])
 
     const constructNewEmployee = () => {
-        // ALL THE STUFF TO SAVE AN EMPLOYEE
+        const locationId = parseInt(location.current.value)
+
+        if (!locationId) {
+            window.alert("Please select a location.")
+        } else {
+            addEmployee({
+                name: name.current.value,
+                locationId
+            })
+            .then(() => history.push("/employees"))
+        }
     }
 
     return (
@@ -29,6 +39,27 @@ export const EmployeeForm = props => {
                     <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
                 </div>
             </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="location">Assign to location: </label>
+                    <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
+                        <option value="0">Select a location</option>
+                        {locations.map(l => (
+                            <option key={l.id} value={l.id}>
+                                {l.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </fieldset>
+            <button type="submit"
+                onClick={evt => {
+                    evt.preventDefault() // Prevent browser from submitting the form
+                    constructNewEmployee()
+                }}
+                className="btn btn-primary">
+                Save Employee
+            </button>
         </form>
     )
 }

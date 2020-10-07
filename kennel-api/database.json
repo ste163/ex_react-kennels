@@ -66,6 +66,11 @@
       "id": 4,
       "name": "Jenny Beecher",
       "locationId": 2
+    },
+    {
+      "name": "Sam",
+      "locationId": 3,
+      "id": 5
     }
   ],
   "locations": [
