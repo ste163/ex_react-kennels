@@ -31,30 +31,27 @@
   ],
   "customers": [
     {
-      "id": 1,
-      "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
+      "email": "sam@email.com",
+      "password": "123",
+      "name": "sam E",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Homer Simpson",
-      "address": "7005 Chestnut Ct"
-    },
-    {
-      "id": 3,
+      "email": "jd@email.com",
+      "password": "123",
       "name": "Jane Doe",
-      "address": "125 Main Street"
+      "id": 2
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "Jeremy Bakker",
+      "name": "Jeremy Baker",
       "locationId": 1
     },
     {
       "id": 2,
-      "name": "Jerome Burker",
+      "name": "Jerome Barker",
       "locationId": 1
     },
     {
