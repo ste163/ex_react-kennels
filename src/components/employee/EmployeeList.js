@@ -15,9 +15,7 @@ export const EmployeeList = () => {
     return (
         <>
             <h2>Employees</h2>
-            <button onClick={() => {history.push("/employees/create")}}>
-            Add Employee
-            </button>
+            <button onClick={() => {history.push("/employees/create")}}>Add Employee</button>
             <div className="employees">
                 {
                     employees.map(employee => {

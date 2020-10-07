@@ -22,7 +22,7 @@ export const AnimalDetail = () => {
 			// We're able to do this, because of the animal? in the return. It's the null-safe operator
 			setAnimal(response)
 		})
-			}, [])
+	}, [])
 
     return (
         <section className="animal">

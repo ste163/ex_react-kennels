@@ -19,11 +19,11 @@ export const LocationProvider = (props) => {
         .then(setLocation)
     }
 
-    const addLocations = location => {
+    const addLocation = location => {
         return fetch("http://localhost:8088/locations", {
             method: "POST",
             headers: {
-                "Content-Type": "application.json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(location)
         })
@@ -35,7 +35,7 @@ export const LocationProvider = (props) => {
     // variables in the value attribute
     return (
         <LocationContext.Provider value={{
-            locations, addLocations, getLocations
+            locations, addLocation, getLocations
         }}>
             {props.children}
         </LocationContext.Provider>
