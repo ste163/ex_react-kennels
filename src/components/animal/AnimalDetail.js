@@ -4,11 +4,12 @@ import { useParams, useHistory } from "react-router-dom"
 import "./Animal.css"
 
 export const AnimalDetail = () => {
-    const { getAnimalById } = useContext(AnimalContext)
+    const { getAnimalById, releaseAnimal } = useContext(AnimalContext)
 	
-	const [animal, setAnimal] = useState({})
-	const [location, setLocation] = useState({})
-	const [customer, setCustomer] = useState({})
+	// Don't need to set useState to an empty object because
+	// the null-safe operator in the return handles the undefined objects
+	// until we fetch all the info.
+	const [animal, setAnimal] = useState()
     
     // UseParams allows us to use the passed in animalId
 	const { animalId } = useParams();
@@ -17,18 +18,26 @@ export const AnimalDetail = () => {
     useEffect(() => {
         getAnimalById(animalId)
         .then((response) => {
+			// Try to keep this at one setting, so it only has to render once
+			// We're able to do this, because of the animal? in the return. It's the null-safe operator
 			setAnimal(response)
-			setLocation(response.location)
-			setCustomer(response.customer)
 		})
 			}, [])
 
     return (
         <section className="animal">
-            <h3 className="animal__name">{animal.name}</h3>
-            <div className="animal__breed">{animal.breed}</div>
-			<div className="animal__location">Location: {location.name}</div>
-			<div className="animal__owner">Customer: {customer.name}</div>
+            <h3 className="animal__name">{animal?.name}</h3>
+            <div className="animal__breed">{animal?.breed}</div>
+			<div className="animal__location">Location: {animal?.location.name}</div>
+			<div className="animal__owner">Customer: {animal?.customer?.name}</div>
+			<button onClick={
+   	 			() => {
+					releaseAnimal(animal.id)
+						.then(() => {
+							history.push("/animals")
+						})
+			}}>Release Animal
+			</button>
         </section>
     )
 }
