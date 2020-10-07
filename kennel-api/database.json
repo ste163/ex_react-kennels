@@ -32,15 +32,18 @@
   "customers": [
     {
       "email": "sam@email.com",
-      "password": "123",
       "name": "sam E",
       "id": 1
     },
     {
       "email": "jd@email.com",
-      "password": "123",
       "name": "Jane Doe",
       "id": 2
+    },
+    {
+      "email": "name@email.com",
+      "name": "Test Name",
+      "id": 3
     }
   ],
   "employees": [

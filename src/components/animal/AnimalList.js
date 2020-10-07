@@ -27,7 +27,7 @@ export const AnimalList = () => {
         <div className="animals">
         {
           animals.map(animal => {
-            return <AnimalCard key={animal.id} animal={animal} location={animal.location} />
+            return <AnimalCard key={animal.id} animal={animal} />
           })
         }
         </div>
