@@ -30,8 +30,13 @@ export const EmployeeForm = props => {
         }
     }
 
+    const submitEmployee = (e) => {
+        e.preventDefault()
+        constructNewEmployee()
+    }
+
     return (
-        <form className="employeeForm">
+        <form className="employeeForm" onSubmit={submitEmployee}>
             <h2 className="employeeForm__title">New Employee</h2>
             <fieldset>
                 <div className="form-group">
@@ -52,14 +57,7 @@ export const EmployeeForm = props => {
                     </select>
                 </div>
             </fieldset>
-            <button type="submit"
-                onClick={evt => {
-                    evt.preventDefault() // Prevent browser from submitting the form
-                    constructNewEmployee()
-                }}
-                className="btn btn-primary">
-                Save Employee
-            </button>
+            <button type="submit" className="btn btn-primary">Save Employee</button>
         </form>
     )
 }
