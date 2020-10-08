@@ -1,13 +1,6 @@
 {
   "animals": [
     {
-      "id": 2,
-      "name": "Kitty",
-      "breed": "Cat",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
       "id": 3,
       "name": "Goldie",
       "breed": "Golden Doodle",
@@ -20,6 +13,17 @@
       "locationId": 2,
       "customerId": 3,
       "id": 4
+    },
+    {
+      "id": 5,
+      "name": "Good Cat",
+      "locationId": 3,
+      "customerId": 1
+    },
+    {
+      "locationId": 3,
+      "customerId": 3,
+      "id": 8
     }
   ],
   "customers": [

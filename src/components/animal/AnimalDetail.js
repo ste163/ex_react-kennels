@@ -32,12 +32,15 @@ export const AnimalDetail = () => {
 			<div className="animal__owner">Customer: {animal?.customer?.name}</div>
 			<button onClick={
    	 			() => {
-					releaseAnimal(animal.id)
+					releaseAnimal(animal?.id)
 						.then(() => {
 							history.push("/animals")
 						})
 			}}>Release Animal
 			</button>
+			<button onClick={() => {
+				history.push(`/animals/edit/${animal?.id}`)
+			}}>Edit</button>
         </section>
     )
 }

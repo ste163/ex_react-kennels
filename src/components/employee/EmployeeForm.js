@@ -47,7 +47,7 @@ export const EmployeeForm = props => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Assign to location: </label>
-                    <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
+                    <select defaultValue="" required name="location" ref={location} id="employeeLocation" className="form-control" >
                         <option value="0">Select a location</option>
                         {locations.map(l => (
                             <option key={l.id} value={l.id}>
