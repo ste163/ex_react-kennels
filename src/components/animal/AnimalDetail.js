@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
-import { AnimalContext } from "./AnimalProvider"
 import { useParams, useHistory } from "react-router-dom"
+import { AnimalContext } from "./AnimalProvider"
 import "./Animal.css"
 
 export const AnimalDetail = () => {
