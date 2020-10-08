@@ -103,7 +103,7 @@ export const AnimalForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="location">Assign to location: </label>
+                    <label htmlFor="animalLocation">Assign to location: </label>
                     <select value={animal.locationId} name="locationId" id="animalLocation" className="form-control" onChange={handleControlledInputChange}>
                         <option value="0">Select a location</option>
                         {locations.map(l => (

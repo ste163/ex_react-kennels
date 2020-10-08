@@ -46,11 +46,6 @@
       "locationId": 1
     },
     {
-      "id": 2,
-      "name": "Jerome Barker",
-      "locationId": 1
-    },
-    {
       "id": 3,
       "name": "Jane Balker",
       "locationId": 2
@@ -64,6 +59,11 @@
       "name": "Bill Smith",
       "locationId": 4,
       "id": 6
+    },
+    {
+      "name": "Jerome J. Barker",
+      "locationId": 4,
+      "id": 7
     }
   ],
   "locations": [

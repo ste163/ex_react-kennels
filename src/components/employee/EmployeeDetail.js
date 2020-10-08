@@ -26,11 +26,11 @@ export const EmployeeDetail = () => {
                         .then(() => {
                             history.push("/employees")
                         })
-                }}>
-                Fire Employee
+                }}>Fire Employee
             </button>
-            <button>
-                Edit Employee
+            <button onClick={() => {
+                    history.push(`/employees/edit/${employee?.id}`)
+                }}>Edit Employee
             </button>
         </section>
     )
