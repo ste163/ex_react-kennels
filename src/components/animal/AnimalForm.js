@@ -47,8 +47,8 @@ export const AnimalForm = () => {
     }, [])
 
     const constructAnimalObject = () => {
-        if (parseInt(animal.locationId) === 0) {
-            window.alert("Please select a location")
+        if (!parseInt(animal.locationId) || !parseInt(animal.customerId)) {
+            window.alert("Please select from a drop-down")
         } else {
             //disable the button - no extra clicks
             setIsLoading(true);
@@ -57,14 +57,16 @@ export const AnimalForm = () => {
                 updateAnimal({
                     id: animal.id,
                     name: animal.name,
+                    breed: animal.breed,
                     locationId: parseInt(animal.locationId),
                     customerId: parseInt(animal.customerId)
                 })
                 .then(() => history.push(`/animals/detail/${animal.id}`))
-            }else {
+            } else {
                 //POST - add
                 addAnimal({
                     name: animal.name,
+                    breed: animal.breed,
                     locationId: parseInt(animal.locationId),
                     customerId: parseInt(animal.customerId)
                 })
@@ -72,9 +74,14 @@ export const AnimalForm = () => {
             }
         }
     }
+
+    const submitForm = e => {
+        e.preventDefault() // Prevent browser from submitting the form
+        constructAnimalObject()
+    }
     
     return (
-        <form className="animalForm">
+        <form className="animalForm" onSubmit={submitForm}>
             <h2 className="animalForm__title">{animalId ? `Edit ${animal.name}'s Information` : "New Animal"}</h2>
             <fieldset>
                 <div className="form-group">
@@ -83,6 +90,15 @@ export const AnimalForm = () => {
                     placeholder="Animal name" 
                     onChange={handleControlledInputChange} 
                     defaultValue={animal.name}/>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="animalBreed">Animal breed: </label>
+                    <input type="text" id="animalBreed" name="breed" required autoFocus className="form-control" 
+                    placeholder="Animal breed" 
+                    onChange={handleControlledInputChange} 
+                    defaultValue={animal.breed}/>
                 </div>
             </fieldset>
             <fieldset>
@@ -111,13 +127,9 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
-                disabled={isLoading}
-                onClick={event => {
-                    event.preventDefault() // Prevent browser from submitting the form
-                    constructAnimalObject()
-                }}>
-            {animalId ? "Save Animal" : "Add Animal"}</button>
+            <button type="submit" className="btn btn-primary"
+                disabled={isLoading}>
+                {animalId ? "Save Animal" : "Add Animal"}</button>
         </form>
     )
 }
