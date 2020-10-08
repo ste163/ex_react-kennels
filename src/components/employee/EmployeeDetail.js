@@ -4,7 +4,7 @@ import { EmployeeContext } from "./EmployeeProvider"
 import "./Employee.css"
 
 export const EmployeeDetail = () => {
-    const { getEmployeeById } = useContext(EmployeeContext)
+    const { getEmployeeById, fireEmployee } = useContext(EmployeeContext)
     const [employee, setEmployee] = useState()
     const { employeeId } = useParams()
     const history = useHistory()
@@ -20,7 +20,13 @@ export const EmployeeDetail = () => {
         <section className="employee">
             <h3 className="employee__name">{employee?.name}</h3>
             <div className="employee__location">Location: {employee?.location.name}</div>
-            <button>
+            <button onClick={
+                () => {
+                    fireEmployee(employee?.id)
+                        .then(() => {
+                            history.push("/employees")
+                        })
+                }}>
                 Fire Employee
             </button>
             <button>

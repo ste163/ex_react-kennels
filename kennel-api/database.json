@@ -20,13 +20,6 @@
       "breed": "Grey Cat",
       "locationId": 3,
       "customerId": 1
-    },
-    {
-      "id": 6,
-      "name": "New Kitty",
-      "breed": "Black with white paws",
-      "locationId": 2,
-      "customerId": 2
     }
   ],
   "customers": [
@@ -66,11 +59,6 @@
       "id": 4,
       "name": "Jenny Beecher",
       "locationId": 2
-    },
-    {
-      "name": "Sam",
-      "locationId": 3,
-      "id": 5
     },
     {
       "name": "Bill Smith",
