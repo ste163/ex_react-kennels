@@ -19,7 +19,7 @@ export const EmployeeList = () => {
             <div className="employees">
                 {
                     employees.map(employee => {
-                        return <EmployeeCard key={employee.id} employee={employee} location={employee.location} />
+                        return <EmployeeCard key={employee.id} employee={employee} />
                     })
                 }
             </div>
